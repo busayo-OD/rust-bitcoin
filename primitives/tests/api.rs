@@ -271,6 +271,38 @@ fn api_can_use_all_types_from_module_script() {
         RedeemScriptSizeError, ScriptHash, ScriptPubKey, ScriptPubKeyBuf, ScriptSig, ScriptSigBuf,
         WScriptHash, WitnessScriptSizeError,
     };
+    use bitcoin_primitives::script::{ScriptBufDecoder, ScriptBufDecoderError, ScriptEncoder};
+}
+
+#[test]
+fn api_can_use_all_types_from_module_block() {
+    use bitcoin_primitives::block::{
+        BlockDecoder, BlockDecoderError, BlockEncoder, BlockHashDecoder, BlockHashDecoderError,
+        BlockHashEncoder, HeaderDecoder, HeaderEncoder, VersionDecoder, VersionDecoderError,
+        VersionEncoder,
+    };
+}
+
+#[test]
+fn api_can_use_all_types_from_module_merkle_tree() {
+    use bitcoin_primitives::merkle_tree::{
+        TxMerkleNodeDecoder, TxMerkleNodeDecoderError, TxMerkleNodeEncoder,
+    };
+}
+
+#[test]
+fn api_can_use_all_types_from_module_transaction() {
+    use bitcoin_primitives::transaction::{
+        OutPointDecoder, OutPointDecoderError, OutPointEncoder, TransactionDecoder,
+        TransactionDecoderError, TransactionEncoder, TxInDecoder, TxInDecoderError, TxInEncoder,
+        TxOutDecoder, TxOutDecoderError, TxOutEncoder, VersionDecoder, VersionDecoderError,
+        VersionEncoder,
+    };
+}
+
+#[test]
+fn api_can_use_all_types_from_module_witness() {
+    use bitcoin_primitives::witness::{WitnessDecoder, WitnessDecoderError, WitnessEncoder};
 }
 
 // `Debug` representation is never empty (C-DEBUG-NONEMPTY).
